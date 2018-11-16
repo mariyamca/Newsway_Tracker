@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mariya.newswaytracker.ProductplanActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PRODUCT"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/langtxt"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:text="Language"
+            android:textSize="15dp"/>
+
+        <Spinner
+            android:id="@+id/langEditText"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/itemtxt"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:text="Item"
+            android:textSize="15dp"/>
+
+        <Spinner
+            android:id="@+id/itemEditText"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/prodtxt"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:text="Product"
+            android:textSize="15dp"/>
+
+        <Spinner
+            android:id="@+id/prodEditText"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/serButton"
+            android:text="SEARCH"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler1">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>

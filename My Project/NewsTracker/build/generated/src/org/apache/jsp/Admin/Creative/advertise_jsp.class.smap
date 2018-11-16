@@ -1,0 +1,35 @@
+SMAP
+advertise_jsp.java
+JSP
+*S JSP
+*F
++ 0 advertise.jsp
+Admin/Creative/advertise.jsp
++ 1 Header.jsp
+Admin/Creative/Header.jsp
++ 2 Footer.jsp
+Admin/Creative/Footer.jsp
+*L
+5,4:51
+5#1,81:54
+8#0,4:135
+11:138,9
+12,3:147
+15,81:151
+95,103:232
+198,2:335,3
+200,4:341
+204:345,3
+205,3:348
+208:351,3
+209,4:354
+213:358,3
+214,20:361
+234,10:382
+243,2:392
+245,7:394,3
+252,3:415
+256,4:420
+259,18:424
+5#2,70:441
+*E

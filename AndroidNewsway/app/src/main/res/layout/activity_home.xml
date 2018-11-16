@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mariya.newswaytracker.HomeActivity"
+    android:background="@drawable/newspaper">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/hmbtn"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:text="HOME" />
+
+
+        <Button
+            android:id="@+id/editbtn"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:text="EDIT PROFILE" />
+
+        <Button
+            android:id="@+id/viiewbtn"
+            android:layout_width="127dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:text="VIEW PROFILE" />
+
+        <Button
+            android:id="@+id/ch1btn"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:text="Change Password" />
+
+        <Button
+            android:id="@+id/prdtbtn"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:text="PRODUCT" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_viewlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View List" />
+
+        <Button
+            android:id="@+id/btn_tarck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Track" />
+
+        <Button
+            android:id="@+id/btn_comp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complaint" />
+
+        <Button
+            android:id="@+id/btn_notify"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Notification" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="HOME PAGE"
+            android:gravity="center"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mariya.newswaytracker">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/img"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".ViewActivity" />
+        <activity android:name=".EditActivity" />
+        <activity android:name=".PasswordActivity" />
+        <activity android:name=".PaperboyActivity" />
+        <activity android:name=".MainLoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PaprboyLoginActivity" />
+        <activity android:name=".HomepaperActivity" />
+        <activity android:name=".ViewpaperActivity" />
+        <activity android:name=".EditPaperActivity" />
+        <activity android:name=".ProductplanActivity" />
+        <activity android:name=".BookingActivity" />
+        <activity android:name=".ViewBookActivity" />
+        <activity android:name=".CardActivity" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".ViewrouteActivity" />
+        <activity android:name=".TrackviewActivity" />
+        <activity android:name=".PayActivity" />
+        <activity android:name=".MaincardActivity" />
+        <activity android:name=".ComplaintActivity" />
+        <activity android:name=".ViewcustNotify"></activity>
+    </application>
+
+</manifest>

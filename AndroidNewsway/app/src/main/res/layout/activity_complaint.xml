@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/nws"
+    tools:context="com.example.mariya.newswaytracker.ComplaintActivity">
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textStyle="bold" android:textSize="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textAlignment="center"
+        android:text="Post Your Complaints"/>
+
+
+    -<LinearLayout android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+
+        <TextView android:layout_height="52dp"
+        android:layout_width="119dp" android:textSize="15dp"
+        android:text="Complaint Details" android:id="@+id/comptxt"/>
+
+        <EditText android:layout_height="wrap_content"
+        android:layout_width="268dp"
+           android:id="@+id/complainttxt"/>
+
+</LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+    </LinearLayout>
+
+
+    -<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="wrap_content" android:layout_gravity="center">
+
+    <Button android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:text="SUBMIT"
+        android:id="@+id/subButton"/>
+
+    <Button android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:text="CANCEL"
+        android:id="@+id/canButton"/>
+
+</LinearLayout>
+
+</LinearLayout>

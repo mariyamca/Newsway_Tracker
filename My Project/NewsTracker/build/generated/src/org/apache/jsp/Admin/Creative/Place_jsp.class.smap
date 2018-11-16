@@ -1,0 +1,30 @@
+SMAP
+Place_jsp.java
+JSP
+*S JSP
+*F
++ 0 Place.jsp
+Admin/Creative/Place.jsp
++ 1 Header.jsp
+Admin/Creative/Header.jsp
++ 2 Footer.jsp
+Admin/Creative/Footer.jsp
+*L
+5:51
+5#1,81:52
+6#0,4:133
+9:136,9
+10,4:145
+14,66:150
+79,97:216
+176,2:313,3
+178,20:319
+198,7:340
+204,2:347
+206,4:349,3
+210,3:361
+214,4:366
+217,25:370
+5#2,70:394
+241#0:464
+*E
