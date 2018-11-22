@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mariya.newswaytracker.AdvertiseActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ADVERTISEMENT"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/typetxt"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:text="TYPE"
+            android:textSize="15dp"/>
+
+        <Spinner
+            android:id="@+id/typEditText"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/heighttxt"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:text="HEIGHT"
+            android:textSize="15dp"/>
+
+        <Spinner
+            android:id="@+id/heightEditText"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/widthtxt"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:text="WIDTH"
+            android:textSize="15dp"/>
+
+        <Spinner
+            android:id="@+id/widthEditText"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/serButton"
+            android:text="SEARCH"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ratetxt"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:text="RATE"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/rattxt"
+            android:layout_width="268dp"
+            android:layout_height="match_parent"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+    <Button
+        android:layout_gravity="center"
+        android:id="@+id/nextButton"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:text="NEXT" />
+
+
+
+</LinearLayout>

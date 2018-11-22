@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
-    Button home, vie, edi, ch, prod,viewlist,track,comp,notify;
+    Button home, vie, edi, ch, prod,viewlist,track,comp,notify,adv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         viewlist=findViewById(R.id.btn_viewlist);
         comp=findViewById(R.id.btn_comp);
         notify=findViewById(R.id.btn_notify);
+        adv=findViewById(R.id.btn_adv);
+        adv.setOnClickListener(this);
         notify.setOnClickListener(this);
         comp.setOnClickListener(this);
         track.setOnClickListener(this);
@@ -65,6 +67,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (view == notify) {
             Intent i = new Intent(HomeActivity.this, ViewcustNotify.class);
+            startActivity(i);
+        }
+        else if (view == adv) {
+            Intent i = new Intent(HomeActivity.this, AdvertiseActivity.class);
             startActivity(i);
         }
         else {

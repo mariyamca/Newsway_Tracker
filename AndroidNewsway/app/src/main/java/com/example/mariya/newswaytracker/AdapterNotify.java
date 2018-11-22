@@ -17,7 +17,7 @@ public class AdapterNotify extends RecyclerView.Adapter<AdapterNotify.MyViewHold
     Context c;
     List<BeanNotify> listnoti;
 
-    public AdapterNotify(List<BeanNotify> lst, ViewcustNotify viewcustNotify) {
+    public AdapterNotify(List<BeanNotify> lst,ViewcustNotify viewcustNotify) {
 
         this.listnoti=lst;
         c=viewcustNotify;

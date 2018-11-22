@@ -5,7 +5,7 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.ResultSet;
 
-public final class viewcomplt_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Viewadvertise_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,7 +48,6 @@ public final class viewcomplt_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write('\n');
       out.write('\n');
       out.write("\n");
       out.write("\n");
@@ -159,9 +158,9 @@ public final class viewcomplt_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
-      out.write("     <head>\n");
+      out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>View paperboy</title>\n");
+      out.write("        <title>View Advertisement</title>\n");
       out.write("        <style>\n");
       out.write("input[type=text],select {\n");
       out.write("    width: 50%;\n");
@@ -250,7 +249,7 @@ public final class viewcomplt_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("       <div id=\"main\">\n");
-      out.write("       <h2 align=\"center\" >VIEW COMPLAINTS</h2>&nbsp;\n");
+      out.write("       <h2 align=\"center\" >VIEW ADVERTISEMENT</h2>&nbsp;\n");
       out.write("       <br>\n");
       out.write("    <br>\n");
       out.write("        <form>\n");
@@ -258,27 +257,26 @@ public final class viewcomplt_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <table id=\"customers\">\n");
       out.write("    <tr>\n");
       out.write("    <th >No</th>\n");
-      out.write("    <th>Name</th>\n");
-      out.write("    <th>Description</th>\n");
-      out.write("    <th>Date</th>\n");
-      out.write("    <th>Time</th>\n");
+      out.write("    <th>Type</th>\n");
+      out.write("    <th>Width</th>\n");
+      out.write("    <th>Height</th>\n");
+      out.write("    <th>Rate</th>\n");
+      out.write("    <th>Image</th>\n");
       out.write("    \n");
-      out.write("    <th></th>\n");
-      out.write("    <th></th>\n");
       out.write("    </tr>\n");
       out.write("        \n");
       out.write("    ");
 
-        String s="select * from tbl_complaint c inner join tbl_custreg ct on c.custreg_id=ct.custreg_id" ;
+        String s="select * from tbl_insadv iv inner join tbl_advertise ad on iv.adv_type=ad.advertise_id" ;
         ResultSet r=obj.select(s);
         int i=1;
         while(r.next())
         {
-            String nam=r.getString("custreg_name");
-             String descp=r.getString("com_des");
-              String dat=r.getString("com_date");
-             String tim=r.getString("com_time");
-              
+            String typ=r.getString("advertise_type");
+             String wid=r.getString("adv_width");
+              String hei=r.getString("adv_height");
+             String rat=r.getString("adv_rate");
+              String img=r.getString("adv_image");
                
               
              
@@ -288,22 +286,23 @@ public final class viewcomplt_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print(i);
       out.write("</td>\n");
       out.write("                <td>");
-      out.print(nam);
+      out.print(typ);
       out.write("</td>\n");
       out.write("                <td>");
-      out.print(descp);
+      out.print(wid);
       out.write("</td>\n");
       out.write("                <td>");
-      out.print(dat);
+      out.print(hei);
       out.write("</td>\n");
       out.write("                <td>");
-      out.print(tim);
+      out.print(rat);
       out.write("</td>\n");
-      out.write("               \n");
-      out.write("                <td><a href=\"viewcomplt.jsp?acceptid=");
-      out.print(r.getString("custreg_id"));
-      out.write("\">View</a></td>\n");
-      out.write("               </tr>\n");
+      out.write("                <td><img src=\"../Creative/image/");
+      out.print(img);
+      out.write("\" width=\"100\" height=\"100\" alt=\"Sorry,Couldn't Load\"> </td>\n");
+      out.write("                \n");
+      out.write("                \n");
+      out.write("              </tr>\n");
       out.write("            \n");
       out.write("            ");
 

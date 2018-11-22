@@ -139,7 +139,7 @@ input[type=submit]:hover,input[type=reset]:hover {
                 <td><%=dat%></td>
                 <td><%=tim%></td>
                
-                
+                <td><a href="viewcomplt.jsp?acceptid=<%=r.getString("custreg_id")%>">View</a></td>
                </tr>
             
             <%

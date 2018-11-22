@@ -70,9 +70,41 @@ public class PaperboyActivity extends AppCompatActivity implements View.OnClickL
         Cpsw = cpsw.getText().toString();
         place=placeid[spplace.getSelectedItemPosition()];
 
+        if (username.length() == 0) {
+            name.requestFocus();
+            name.setError("FIELD CANNOT BE EMPTY");
+        } else if (!Name.matches("[a-zA-Z ]+")) {
+            name.requestFocus();
+            name.setError("ENTER ONLY ALPHABETICAL CHARACTER");
+        } else if (Age.length() == 0) {
+            age.requestFocus();
+            age.setError("FIELD CANNOT BE EMPTY");
+        } else if (Phno.length() == 0) {
+            phone.requestFocus();
+            phone.setError("FIELD CANNOT BE EMPTY ! ");
+        } else if (Email.length() == 0) {
+            email.requestFocus();
+            email.setError("FIELD CANNOT BE EMPTY ! ");
+        }
+        else if (District.length() == 0) {
+            district.requestFocus();
+            district.setError("FIELD CANNOT BE EMPTY");
+        } else if (!District.matches("[a-zA-Z ]+")) {
+            district.requestFocus();
+            district.setError("ENTER ONLY ALPHABETICAL CHARACTER");
+        } else if (Pin.length() == 0) {
+            pin.requestFocus();
+            pin.setError("FIELD CANNOT BE EMPTY");
+        } else if (User.length() == 0) {
+            username.requestFocus();
+            username.setError("FIELD CANNOT BE EMPTY");
+        } else if (!User.matches("[a-zA-Z ]+")) {
+            username.requestFocus();
+            username.setError("ENTER ONLY ALPHABETICAL CHARACTER");
+        }
+
 
         if (view == B1) {
-
 
             if (Pass.equals(Cpsw)) {
 

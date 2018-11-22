@@ -1,18 +1,17 @@
 <%-- 
-    Document   : viewcomplt
-    Created on : Nov 11, 2018, 9:33:48 AM
+    Document   : Viewadvertise
+    Created on : Nov 19, 2018, 10:42:23 PM
     Author     : Mariya
 --%>
-
 <%@include file="Header.jsp"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean class="database.ConnectionClass" id="obj"></jsp:useBean>
 <%@page import="java.sql.ResultSet"%>
 <!DOCTYPE html>
 <html>
-     <head>
+    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>View paperboy</title>
+        <title>View Advertisement</title>
         <style>
 input[type=text],select {
     width: 50%;
@@ -101,7 +100,7 @@ input[type=submit]:hover,input[type=reset]:hover {
 
 
        <div id="main">
-       <h2 align="center" >VIEW COMPLAINTS</h2>&nbsp;
+       <h2 align="center" >VIEW ADVERTISEMENT</h2>&nbsp;
        <br>
     <br>
         <form>
@@ -109,38 +108,38 @@ input[type=submit]:hover,input[type=reset]:hover {
         <table id="customers">
     <tr>
     <th >No</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Date</th>
-    <th>Time</th>
+    <th>Type</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Rate</th>
+    <th>Image</th>
     
-    <th></th>
-    <th></th>
     </tr>
         
     <%
-        String s="select * from tbl_complaint c inner join tbl_custreg ct on c.custreg_id=ct.custreg_id" ;
+        String s="select * from tbl_insadv iv inner join tbl_advertise ad on iv.adv_type=ad.advertise_id" ;
         ResultSet r=obj.select(s);
         int i=1;
         while(r.next())
         {
-            String nam=r.getString("custreg_name");
-             String descp=r.getString("com_des");
-              String dat=r.getString("com_date");
-             String tim=r.getString("com_time");
-              
+            String typ=r.getString("advertise_type");
+             String wid=r.getString("adv_width");
+              String hei=r.getString("adv_height");
+             String rat=r.getString("adv_rate");
+              String img=r.getString("adv_image");
                
               
              %>
             <tr>
                 <td><%=i%></td>
-                <td><%=nam%></td>
-                <td><%=descp%></td>
-                <td><%=dat%></td>
-                <td><%=tim%></td>
-               
-                <td><a href="viewcomplt.jsp?acceptid=<%=r.getString("custreg_id")%>">View</a></td>
-               </tr>
+                <td><%=typ%></td>
+                <td><%=wid%></td>
+                <td><%=hei%></td>
+                <td><%=rat%></td>
+                <td><img src="../Creative/image/<%=img%>" width="100" height="100" alt="Sorry,Couldn't Load"> </td>
+                
+                
+              </tr>
             
             <%
             

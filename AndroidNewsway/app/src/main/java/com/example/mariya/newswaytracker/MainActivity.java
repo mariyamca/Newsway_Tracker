@@ -23,14 +23,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
-    Button B1,B2;
-    EditText name, hname,age, phone, email, district, pin, accno, username, password, cpsw;
+    Button B1, B2;
+    EditText name, hname, age, phone, email, district, pin, accno, username, password, cpsw;
     Spinner spplace;
     RadioButton R1, R2;
     RadioGroup G;
-    String placeid[]=null;
-    String placename[]=null;
-    ArrayAdapter <String> adapterplace;
+    String placeid[] = null;
+    String placename[] = null;
+    ArrayAdapter<String> adapterplace;
     String Name, Hname, Age, Email, Phno, District, Pin, Accno, User, Pass, Cpsw, Gender, place;
     SharedPreferences sh;
     String sh_name = "My Data";
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         G = findViewById(R.id.gender);
         B1 = findViewById(R.id.regButton);
         B1.setOnClickListener(this);
-        B2=findViewById(R.id.canButton);
+        B2 = findViewById(R.id.canButton);
         B2.setOnClickListener(this);
         G.setOnCheckedChangeListener(this);
         placedata pl = new placedata();
@@ -93,47 +93,95 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Accno = accno.getText().toString();
         User = username.getText().toString();
         Pass = password.getText().toString();
-        place=placeid[spplace.getSelectedItemPosition()];
+        place = placeid[spplace.getSelectedItemPosition()];
         Cpsw = cpsw.getText().toString();
 
-
-        if (view == B1) {
-
-
-            if (Pass.equals(Cpsw)) {
-
-                insertdata id = new insertdata();
-                id.execute(Name, Hname, Gender, place, Age, Phno, Email, District, Pin, Accno, User, Pass);
-
-            } else {
-                Toast.makeText(this, "confirm password not same", Toast.LENGTH_SHORT).show();
+        if (username.length() == 0) {
+            name.requestFocus();
+            name.setError("FIELD CANNOT BE EMPTY");
+        } else if (!Name.matches("[a-zA-Z ]+")) {
+            name.requestFocus();
+            name.setError("ENTER ONLY ALPHABETICAL CHARACTER");
+        } else if (Hname.length() == 0) {
+            hname.requestFocus();
+            hname.setError("FIELD CANNOT BE EMPTY");
+        } else if (!Hname.matches("[a-zA-Z ]+")) {
+            hname.requestFocus();
+            hname.setError("ENTER ONLY ALPHABETICAL CHARACTER");
+        } else if (Age.length() == 0) {
+            age.requestFocus();
+            age.setError("FIELD CANNOT BE EMPTY");
+        } else if (Phno.length() == 0) {
+            phone.requestFocus();
+            phone.setError("FIELD CANNOT BE EMPTY ! ");
+        } else if (Email.length() == 0) {
+            email.requestFocus();
+            email.setError("FIELD CANNOT BE EMPTY ! ");
+        }
+        else if (Email.length()>0) {
+            boolean a = isValidMail(Email);
+            if(a){
+                Toast.makeText(this, " Valid Email !", Toast.LENGTH_SHORT).show();
             }
-
-
+        }
+         else if (District.length() == 0) {
+            district.requestFocus();
+            district.setError("FIELD CANNOT BE EMPTY");
+        } else if (!District.matches("[a-zA-Z ]+")) {
+            district.requestFocus();
+            district.setError("ENTER ONLY ALPHABETICAL CHARACTER");
+        } else if (Pin.length() == 0) {
+            pin.requestFocus();
+            pin.setError("FIELD CANNOT BE EMPTY");
+        } else if (Accno.length() == 0) {
+            accno.requestFocus();
+            accno.setError("FIELD CANNOT BE EMPTY");
+        } else if (User.length() == 0) {
+            username.requestFocus();
+            username.setError("FIELD CANNOT BE EMPTY");
+        } else if (!User.matches("[a-zA-Z ]+")) {
+            username.requestFocus();
+            username.setError("ENTER ONLY ALPHABETICAL CHARACTER");
         }
 
-        else if(view==B2){
 
-            phone.setText("");
-            email.setText("");
-            name.setText("");
-            hname.setText("");
-            password.setText("");
-            cpsw.setText("");
-            username.setText("");
-            R1.setChecked(false);
-            R2.setChecked(false);
-            G.setSelected(false);
-            accno.setText("");
-            pin.setText("");
-            district.setText("");
-            age.setText("");
 
+        if(view ==B1)
+
+        {
+        if (Pass.equals(Cpsw)) {
+
+            insertdata id = new insertdata();
+            id.execute(Name, Hname, Gender, place, Age, Phno, Email, District, Pin, Accno, User, Pass);
+
+        } else {
+            Toast.makeText(this, "confirm password not same", Toast.LENGTH_SHORT).show();
         }
-
-
 
     }
+
+        else if(view==B2)
+
+    {
+
+        phone.setText("");
+        email.setText("");
+        name.setText("");
+        hname.setText("");
+        password.setText("");
+        cpsw.setText("");
+        username.setText("");
+        R1.setChecked(false);
+        R2.setChecked(false);
+        G.setSelected(false);
+        accno.setText("");
+        pin.setText("");
+        district.setText("");
+        age.setText("");
+
+    }
+}
+
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -144,6 +192,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
+
 
     private class insertdata extends AsyncTask<String, String, String> {
 

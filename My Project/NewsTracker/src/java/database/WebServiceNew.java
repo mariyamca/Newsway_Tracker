@@ -513,9 +513,40 @@ ConnectionClass con=new ConnectionClass();
        if(b1)
        {
            ab="true";
-       }
-     
-        return ab;
+           JSONArray j=new JSONArray();
+           String sl="select * from tbl_booking where booking_id='"+Id+"'";
+            System.out.println(sl);
+            ResultSet rm=con.select(sl);
+             String b;
+              try {
+            while(rm.next())
+            {
+                JSONObject jo= new JSONObject();
+                
+                b=rm.getString("custreg_id");
+                 System.out.println(b);
+                jo.put("custid",b);
+                j.put(jo);
+                
+                String dl="delete from tbl_notify where custreg_id='"+b+"'";
+                 System.out.println(dl);
+                if(con.insert(dl)){
+                      System.out.println(dl);
+                    System.out.println("Notification Deleted");
+                }
+                else{
+                    System.out.println("Couldnt delete");
+                }
+                
+                 }       
+    } catch (Exception ex) {
+       System.out.println(ex);
+    }
+        System.out.println("json:\t"+j);
+    return j.toString();
+    }
+            
+         return ab;
     }
     
     
@@ -692,7 +723,92 @@ String insert="insert into tbl_location(paperboy_id, location_latitude,location_
     } 
     
  
-}
+     @WebMethod(operationName = "getadvertiseperation")
+    public String getadvertiseperation() {
+        //TODO write your implementation code here:
+        JSONArray j=new JSONArray();
+        String sele="select* from tbl_advertise";
+        ResultSet r=con.select(sele);
+        
+        String a,s,b,c;
+       try {
+            while(r.next())
+            {
+                JSONObject jo= new JSONObject();
+                
+                s=r.getString("advertise_id");
+                a=r.getString("advertise_type");
+                b=r.getString("advertise_width");
+                c=r.getString("advertise_height");
+                jo.put("advid",s);
+                jo.put("advtpe",a);
+                 jo.put("advwid",b);
+                  jo.put("advheig",c);
+                
+                j.put(jo);
+                
+            }
+        } catch (SQLException ex) {
+            
+        } catch (JSONException ex) {
+        Logger.getLogger(WebServiceNew.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        return j.toString();
+    }
+    
+     @WebMethod(operationName = "getrateadvertise")
+    public String getrateadvertise(@WebParam(name = "width") String width,@WebParam(name = "height") String height) {
+        JSONArray j=new JSONArray();
+         String rate="";
+        try{
+    
+        String sel="select * from tbl_advertise where advertise_width='"+width+"' and advertise_height='"+height+"'";
+        
+         System.out.println(sel);
+         
+         ResultSet r=con.select(sel);
+         while(r.next())
+         {
+             JSONObject jo=new JSONObject();
+             rate=r.getString("advertise_rate");
+             jo.put("advrate",rate);
+             j.put(jo);
+          }
+        } catch (SQLException ex) {
+            
+        } catch (JSONException ex) {
+        Logger.getLogger(WebServiceNew.class.getName()).log(Level.SEVERE, null, ex);
+    }
+      return rate;
+         
+    }
+    
+        
+@WebMethod(operationName = "insertadvertise")
+    public String insertadvertise(@WebParam(name = "type") String type,@WebParam(name = "width") String width,@WebParam(name = "height") String height,@WebParam(name = "rate") String rate) {
+        String ins ="insert into tbl_insadv(adv_type,adv_width,adv_height,adv_rate)values('"+type+"','"+width+"','"+height+"','"+rate+"')";
+        if(con.insert(ins)){
+            
+            String sl="select * from tbl_insadv";
+            System.out.println(sl);
+             ResultSet r=con.select(sl);
+            try {
+             if(r.last()){
+                  
+                        String a=r.getString("adv_id");
+                        return a;
+                    
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(WebServiceNew.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        return "Error";
+    }
+
+    
+  }
 
    
 

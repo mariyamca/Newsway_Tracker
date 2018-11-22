@@ -67,8 +67,6 @@ public class ProductplanActivity extends AppCompatActivity implements View.OnCli
 //        language = langid[splang.getSelectedItemPosition()];
         if (view == B1) {
             bpp.clear();
-
-
             productId=prodid[spprod.getSelectedItemPosition()];
             productName=spprod.getSelectedItem().toString();
             prodplandata pd= new prodplandata();
